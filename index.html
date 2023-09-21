@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"
+      integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.0/build/global/luxon.min.js"></script>
+    <title>Chess Ranking</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo_space">
+        <img
+          src="/images/logo-zse-f-hd.png"
+          alt="logo Elektronika"
+          class="logo_elektronika"
+        />
+        <div class="name">Ranking Szachowy</div>
+      </div>
+      <div class="controls_space">
+        <div class="top_banner" id="top_banner">RANKING</div>
+      </div>
+    </header>
+    <main>
+      <div class="list_space">
+        <div class="ranking_main element_listy active" id="ranking_main">
+          RANKING
+        </div>
+        <input
+          type="search"
+          class="search"
+          id="search_main"
+          placeholder="Szukaj..."
+        />
+        <ul id="nameList" class="nameList">
+          <div class="hidden" id="brakWynikow">Nie ma takiej osoby</div>
+          <!-- tu pojawią się nazwiska -->
+        </ul>
+      </div>
+      <div class="info_space">
+        <ul class="ranking" id="ranking">
+          <!-- hidden -->
+          <li class="ranking-label">
+            <div class="ranking-position">Miejsce</div>
+            <div class="ranking-name">Nazwisko i imię</div>
+            <div class="ranking-elo">ELO</div>
+            <div class="ranking-win">Wygrane</div>
+            <div class="ranking-draw">Remisy</div>
+            <div class="ranking-lost">Przegrane</div>
+            <div class="ranking-last-wrp">Ostatni mecz WRP</div>
+            <div class="ranking-last-elo-change">Ostatnia zmiana ELO</div>
+          </li>
+        </ul>
+
+        <div class="user_interface_info hidden" id="user">
+          <div class="user">
+            <div class="ranking_chart">
+              <div class="chart_space">
+                <canvas id="eloChart"></canvas>
+              </div>
+            </div>
+            <div class="user_info">
+              <img src="/images/avatar.jpg" alt="avatar" class="avatar_img" />
+              <div class="user_name" id="user_name_change">IMIE i NAZWISKO</div>
+              <div class="actual_ranking" id="user_actual_ranking">ELO</div>
+              <div class="actual_position">Miejsce</div>
+            </div>
+            <div class="last_games">
+              <div class="last_games_title">OSTATNIE MECZE</div>
+              <ul class="last_games_table" id="last_games-table">
+                <li class="games_record games_record_label ">
+                  <div class="games-no">NO</div>
+                  <div class="games-opponent">Imie i nazwisko</div>
+                  <div class="games-opponent-rating">ELO Przeciwnika</div>
+                  <div class="games-outcome">Wynik</div>
+                  <div class="games-player-rating">ELO Gracza</div>
+                  <div class="games-rating-change">Zmiana ELO</div>
+                </li>
+              </ul>
+            </div>
+            <div class="last_opponents">
+              <div class="last_opponents_title">OSTATNI PRZECIWNICY</div>
+              <ul class="last_opponents_table" id="last_opponents_table">
+                <li
+                  class="opponents_record opponents_record_label"
+                  id="opponents-record"
+                >
+                  <div class="opponents-name">Nazwisko i imię</div>
+                  <div class="opponents-rating">ELO</div>
+                  <div class="opponents-win">Wygrane</div>
+                  <div class="opponents-draw">Remisy</div>
+                  <div class="opponents-lost">Przegrane</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./scripts/playerlist.js"></script>
+    <script type="module" src="./scripts/ranking.js"></script>
+    <script type="module" src="./scripts/current_preset.js"></script>
+    <script type="module" src="./scripts/charts.js"></script>
+    <script type="module" src="./scripts/games_opponents.js"></script>
+  </body>
+</html>

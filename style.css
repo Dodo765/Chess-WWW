@@ -1,0 +1,681 @@
+:root {
+  --dark_brown: #463f3a;
+  --light_brown: #8a817c;
+  --light_grey: #bcb8b1;
+  --white: #f4f3ee;
+  --blue: #5c7aff;
+  --background_black: rgba(39, 39, 42, 0.5);
+  --font_cacao: rgb(93, 93, 98);
+  --light_font_cacao: rgb(131, 131, 139);
+  --scroll_list_color: rgba(185, 185, 204, 0.5);
+  --background_list_black: rgba(39, 39, 42, 1);
+  --dark_record: #958077;
+  --light_record: #bcb8b1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  height: 7.5vh;
+  width: 100%;
+  display: flex;
+}
+main {
+  height: 92.5vh;
+  width: 100%;
+  display: flex;
+}
+.logo_space {
+  height: 100%;
+  width: 20%;
+  background-color: var(--light_brown);
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.logo_elektronika {
+  background-color: azure;
+  height: 50%;
+  width: auto;
+  aspect-ratio: 0.9;
+  padding: 7px 12px;
+  border-radius: 5px;
+  margin: 10px;
+}
+.name {
+  background-color: transparent;
+  color: aliceblue;
+  width: auto;
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: larger;
+  padding: 5px;
+  margin: 10px;
+}
+.controls_space {
+  height: 100%;
+  width: 80%;
+  background-color: var(--dark_brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top_banner {
+  background-color: transparent;
+  width: auto;
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: x-large;
+  color: var(--light_font_cacao);
+}
+.list_space {
+  width: 20%;
+  height: 100%;
+  background-color: var(--dark_brown);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ranking_main {
+  /* button*/
+  width: 80%;
+  height: 4.5%;
+  margin: 25px auto 10px auto;
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: medium;
+  padding: 9px;
+  background-color: var(--background_black);
+  color: var(--light_font_cacao);
+  border: 2px solid var(--font_cacao);
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.ranking_main.active {
+  color: aliceblue;
+}
+.search {
+  width: 80%;
+  height: 5%;
+  margin: 10px auto 15px auto;
+  border-radius: 10px;
+  background-color: rgba(39, 39, 42, 0.5);
+  border: 2px solid rgb(93, 93, 98);
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: medium;
+  padding: 15px;
+  color: aliceblue;
+}
+.nameList {
+  width: 80%;
+  list-style-type: none;
+  overflow: auto;
+  background-color: var(--background_list_black);
+  margin: 0px auto 30px auto;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.nameList::-webkit-scrollbar {
+  width: 10px;
+  right: -10px;
+  padding: 10px;
+  margin: 10px;
+}
+.nameList::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.nameList::-webkit-scrollbar-thumb {
+  background-color: var(--scroll_list_color);
+  border-radius: 11px;
+}
+.nazwiska,
+#brakWynikow {
+  background-color: transparent;
+  font-family: cursive;
+  font-weight: normal;
+  font-size: medium;
+  padding: 2px 10px;
+  color: aliceblue;
+  border-radius: 5px;
+}
+.active {
+  background-color: chocolate;
+  font-weight: bolder;
+}
+.nazwiska:hover {
+  background-color: chocolate;
+}
+.info_space {
+  width: 80%;
+  height: 100%;
+  background-color: rgba(39, 39, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ranking {
+  width: 70%;
+  height: 90%;
+  border-radius: 20px;
+  padding: 50px;
+  background-color: rgba(39, 39, 42, 0.4);
+  box-sizing: border-box;
+  font-family: monospace, Courier;
+  font-weight: 500;
+  overflow: auto;
+}
+
+.ranking::-webkit-scrollbar {
+  width: 10px;
+  right: -10px;
+  padding: 10px;
+  margin: 10px;
+}
+.ranking::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.ranking::-webkit-scrollbar-thumb {
+  background-color: rgba(60, 60, 63, 1);
+  border-radius: 11px;
+}
+.ranking-label {
+  display: flex;
+  background-color: rgba(39, 39, 42, 0.3);
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.ranking-label div {
+  padding: 10px 2.5%;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.ranking-record {
+  display: flex;
+  background-color: rgba(39, 39, 42, 0.3);
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.white-ranking {
+  background-color: rgba(39, 39, 42, 0.1);
+}
+.ranking-record div {
+  padding: 10px 2.5%;
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ranking-position {
+  border-radius: 5px 0 0 5px;
+  background-color: var(--light_record);
+  width: 2%;
+}
+.ranking-name {
+  width: 30%;
+  background-color: var(--dark_record);
+  justify-content: start;
+}
+.ranking-link:hover {
+  cursor: pointer;
+}
+.ranking-elo {
+  width: 6%;
+  background-color: var(--light_record);
+}
+.ranking-win {
+  background-color: var(--dark_record);
+  width: 3%;
+}
+.ranking-draw {
+  background-color: var(--light_record);
+  width: 3%;
+}
+.ranking-lost {
+  background-color: var(--dark_record);
+  width: 4%;
+}
+.ranking-last-wrp {
+  background-color: var(--light_record);
+  width: 7%;
+}
+.ranking-last-elo-change {
+  background-color: var(--dark_record);
+  width: 4%;
+  border-radius: 0 5px 5px 0;
+}
+.user_interface_info {
+  width: 100%;
+  height: 100%;
+}
+.user {
+  width: 85%;
+  height: 90%;
+  border-radius: 20px;
+  padding: 50px;
+  margin: 2.5% auto;
+  background-color: rgba(39, 39, 42, 0.4);
+  box-sizing: border-box;
+  font-family: monospace, Courier;
+  font-weight: 500;
+  overflow: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.ranking_chart {
+  width: 45%;
+  height: 45%;
+  margin: auto auto;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+.chart_space{
+  /* background-color: rgba(255,255,255,0.01); */
+  border-radius: 15px;
+  padding: 10px;
+  height: 95%;
+  width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user_info {
+  width: 45%;
+  height: 40%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  /* background-color: rgba(255, 255, 255, 0.01); */
+  border-radius: 25px;
+}
+.user_name {
+  background-color: transparent;
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: xx-large;
+  color: rgb(217, 217, 237);
+  margin: 0 auto 10px auto;
+}
+.actual_ranking {
+  background-color: transparent;
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: xx-large;
+  color: rgb(217, 217, 237);
+  margin-right: 10px auto 30px auto;
+}
+.actual_position {
+  background-color: transparent;
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: xx-large;
+  color: rgb(217, 217, 237);
+  margin-right: 10px auto 30px auto;
+}
+.pierwsze_miejsce {
+  color: gold;
+  font-size: xxx-large;
+}
+.drugie_miejsce {
+  color: rgb(192, 184, 184);
+  font-size: xxx-large;
+}
+.trzecie_miejsce {
+  color: rgb(162, 101, 40);
+  font-size: xxx-large;
+}
+.main_miejsce {
+  color: rgb(217, 217, 237);
+  font-size: xx-large;
+}
+.avatar_img {
+  height: 45%;
+  aspect-ratio: 1.1;
+  border-radius: 50%;
+  margin: 10px auto 30px auto;
+}
+
+.last_games {
+  width: 45%;
+  height: 40%;
+  margin: auto auto;
+}
+.last_games_title {
+  text-align: center;
+  font-size: x-large;
+  color: rgb(217, 217, 237);
+  padding: 5px;
+  height: 10%;
+}
+.last_games_table {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: rgba(39, 39, 42, 0.4);
+  box-sizing: border-box;
+  font-family: monospace, Courier;
+  font-weight: 500;
+  overflow: auto;
+  list-style: none;
+}
+
+.last_games_table::-webkit-scrollbar {
+  width: 10px;
+  right: -10px;
+  padding: 10px;
+  margin: 10px;
+}
+.last_games_table::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.last_games_table::-webkit-scrollbar-thumb {
+  background-color: rgba(60, 60, 63, 1);
+  border-radius: 11px;
+}
+.games_record {
+  display: flex;
+  background-color: rgba(39, 39, 42, 0.3);
+  border-radius: 10px;
+  margin: 2px;
+  /* padding: 0px 10px; */
+}
+.games_record div {
+  padding: 10px 2.5%;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.games_record_label {
+  font-size: medium;
+}
+.games-no {
+  width: 2%;
+  background-color: var(--light_record);
+  border-radius: 10px 0px 0px 10px;
+}
+.games-opponent {
+  width: 32%;
+  background-color: var(--dark_record);
+}
+.games-opponent-rating {
+  width: 14%;
+  background-color: var(--light_record);
+}
+.games-outcome {
+  width: 10%;
+  background-color: var(--dark_record);
+}
+.games-player-rating {
+  width: 6%;
+  background-color: var(--light_record);
+}
+.games-rating-change {
+  width: 6%;
+  background-color: var(--dark_record);
+  border-radius: 0 10px 10px 0;
+}
+/*                                             sdfsdfsdfsdfsdf */
+
+.last_opponents {
+  width: 45%;
+  height: 40%;
+  margin: auto auto;
+}
+.last_opponents_title {
+  text-align: center;
+  font-size: x-large;
+  color: rgb(217, 217, 237);
+  padding: 5px;
+  height: 10%;
+}
+.last_opponents_table {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: rgba(39, 39, 42, 0.4);
+  box-sizing: border-box;
+  font-family: monospace, Courier;
+  font-weight: 500;
+  overflow: auto;
+  list-style: none;
+}
+
+.last_opponents_table::-webkit-scrollbar {
+  width: 10px;
+  right: -10px;
+  padding: 10px;
+  margin: 10px;
+}
+.last_opponents_table::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.last_opponents_table::-webkit-scrollbar-thumb {
+  background-color: rgba(60, 60, 63, 1);
+  border-radius: 11px;
+}
+.opponents_record {
+  display: flex;
+  background-color: rgba(39, 39, 42, 0.3);
+  border-radius: 10px;
+  margin: 2px;
+  /* padding: 0px 10px; */
+}
+.opponents_record div {
+  padding: 10px 2.5%;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+/* .last_opponents_table::-webkit-scrollbar-thumb div {
+  padding: 10px 2.5%;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} */
+.opponents_record_label {
+  font-size: medium;
+}
+.opponents-name {
+  width: 45%;
+  background-color: var(--light_record);
+  border-radius: 10px 0px 0px 10px;
+}
+.opponents-rating {
+  width: 10%;
+  background-color: var(--dark_record);
+}
+.opponents-win {
+  width: 15%;
+  background-color: var(--light_record);
+}
+.opponents-draw {
+  width: 12.5%;
+  background-color: var(--dark_record);
+}
+.opponents-lost {
+  width: 17.5%;
+  background-color: var(--light_record);
+  border-radius: 0 10px 10px 0;
+}
+
+#eloChart {
+  background-color: transparent;
+}
+
+
+/* Nowy css dla mniejszych urządzeń */
+@media(max-height: 1000px) {
+  .user_name{
+    font-size: x-large;
+  }
+  .actual_position{
+    font-size: x-large;
+  }
+  .actual_ranking{
+    font-size: x-large;
+  }
+}
+@media(max-height: 800px) {
+  .last_opponents_title{
+    font-size: large;
+  }
+  .last_games_title{
+    font-size: large;
+  }
+}
+
+
+@media(max-width: 2200px){
+  .opponents_record_label div{
+    font-weight: bold;
+  }
+  .games_record_label div{
+    font-weight: bold;
+  }
+  .user{
+    width: 95%;
+    height: 90%;
+    padding: auto;
+    box-sizing: border-box;
+  }
+  .ranking_chart{
+    margin: 10px;
+    width: 47%;
+    height: 47%;
+  }
+  .user_info{
+    margin: 10px;
+    width: 47%;
+    height: 45%;
+    padding: 10px;
+  }
+  .last_games{
+    margin: 10px;
+    width: 47%;
+    height: 47%;
+  }
+  .last_opponents{
+    margin: 10px;
+    width: 47%;
+    height: 47%;
+  }
+  .last_games_table{
+    height: 85%;
+  }
+  .last_opponents_table{
+    height: 85%;
+  }
+  .games-outcome{
+    width: 11%;
+  }
+  .ranking-label div{
+    font-size: medium;
+  }
+}
+@media(max-width: 2000px){
+  .ranking{
+    width: 90%;
+    height: 90%;
+  }
+}
+@media(max-width: 1800px){
+  div.games-rating-change{
+    display: none;
+  }
+  .games-opponent{
+    width: 31%;
+  }
+  .games-opponent-rating{
+    width: 18%;
+  }
+  .games-outcome{
+    width: 15%;
+  }
+  .games-player-rating{
+    width: 10%;
+    border-radius: 0 10px 10px 0;
+  }
+  .games_record div{
+    font-size: medium;
+  }
+
+  .opponents_record div{
+    font-size: medium;
+  }
+  div.opponents-rating{
+    display: none;
+  }
+  .opponents-name{
+    width: 50%;
+  }
+  .opponents-win{
+    background-color: var(--dark_record);
+    width: 15%;
+  }
+  .opponents-draw{
+    background-color: var(--light_record);
+    width: 15%;
+  }
+  .opponents-lost{
+    background-color: var(--dark_record);
+    width: 20%;
+  }
+}
+@media(max-width: 1600px){
+  .games-opponent{
+    width: 28%;
+  }
+  .ranking-position{
+    width: 4%;
+  }
+  .ranking-name{
+    width: 29%;
+  }
+  .ranking-elo{
+    width: 4%;
+  }
+  .ranking-lost{
+    width: 6%;
+  }
+  .ranking-win{
+    width: 4%;
+  }
+  .ranking-last-elo-change{
+    width: 5%;
+  }
+  .ranking-last-wrp{
+    width: 5%;
+  }
+  .games-opponent-rating{
+    width: 20%;
+  }
+}
+@media(max-width: 1400px){
+  
+}
