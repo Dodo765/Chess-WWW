@@ -1,29 +1,40 @@
 export var workbook;
 
+
 async function main(){
   const nameList = document.getElementById('nameList');
 
-  fetch('dane/ranking.xlsx') // Ścieżka do pliku Excela
+  fetch('dane/workbook')
       .then(response => response.arrayBuffer())
       .then(data => {
-        workbook = XLSX.read(data, { type: 'array' });
+        console.log("1")
+
+        //workbook = XLSX.read(data, { type: 'array' }); ////zajmuje długo
+        //XLSX.writeFile(workbook, "workbook");//
+
+        workbook = XLSX.readFile(data, { type: 'buffer' })
+
+
+
+
+
+        console.log("2")
         
-        const sheetName = 'Ratings by Player'; // Nazwa arkusza z danymi
+
+
+        const sheetName = 'Ratings by Player';
         const sheet = workbook.Sheets[sheetName];
 
-        // Przygotuj zakres komórek, który chcesz pobrać
+        
         const range = 'A3:A144';
-        // Pobierz dane z zakresu
+        console.log("3")
         const dataFromRange = XLSX.utils.sheet_to_json(sheet, { header: 1, range });
-
-        // Wyświetl dane w formie listy w HTML
+        console.log("4")
         const nameList = document.getElementById('nameList');
-        //nameList.innerHTML = ''; // Wyczyść listę, jeśli już coś jest na niej
         async function create_li(){
           for (const row of dataFromRange) {
-            const name = row[0]; // Zakładamy, że nazwisko znajduje się w pierwszej kolumnie (indeks 0)
+            const name = row[0]; 
             
-            // Sprawdź, czy dane w komórce są niepuste, zanim dodasz je do listy
             if(name !== '' && name !== undefined){
               if (name.trim() !== '') {
                 const listItem = document.createElement('li');

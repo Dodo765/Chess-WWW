@@ -5,31 +5,27 @@ import { link } from './current_preset.js';
 const ranking = document.getElementById('ranking');
 
 if (ranking) {
-  // Wywołaj appendChild na ranking
 } else {
   console.error("Element ranking nie został znaleziony.");
 }
 let licznik=0;
-fetch('dane/ranking.xlsx') // Ścieżka do pliku Excela
+fetch('dane/ranking.xlsx') 
     .then(response => response.arrayBuffer())
     .then(data => {
       //workbook = XLSX.read(data, { type: 'array' });
-      const sheetName = 'Wins & Losses'; // Nazwa arkusza z danymi
+      const sheetName = 'Wins & Losses'; 
       const sheet = workbook.Sheets[sheetName];
 
-      // Przygotuj zakres komórek, który chcesz pobrać
       const range = 'A6:H150';
 
-      // Pobierz dane z zakresu
       const dataFromRange = XLSX.utils.sheet_to_json(sheet, { header: 1, range });
 
-      // Wyświetl dane w formie listy w HTML
+      
       const ranking = document.getElementById('ranking');
-      //ranking.innerHTML = ''; // Wyczyść listę, jeśli już coś jest na niej
 
       for (const row of dataFromRange) {
         if(row.length !== 0){
-          const id = row[0]; // Zakładamy, że nazwisko znajduje się w pierwszej kolumnie (indeks 0)
+          const id = row[0]; 
           const player = row[1];
           const rating = row[2].toFixed(0);
           const wrp = row[7];
@@ -57,12 +53,6 @@ fetch('dane/ranking.xlsx') // Ścieżka do pliku Excela
           
             
         
-
-          // console.log(danePodzielone[0]);
-
-          
-          // Sprawdź, czy dane w komórce są niepuste, zanim dodasz je do listy
-          
           if (player.trim() !== '' && player!=".") {
             const listItem = document.createElement('li');
             listItem.classList.add('ranking-record');
@@ -86,7 +76,6 @@ fetch('dane/ranking.xlsx') // Ścieżka do pliku Excela
                 DIV.setAttribute('title', 'BRAK DANYCH')
                 DIV.style.cursor='help'
               }
-              console.log(DATA)
               if(licznik === 1 && CLASS === 'ranking-position'){
                 DIV.style.fontSize='xxx-large'
                 DIV.style.color="gold"
