@@ -7,29 +7,19 @@ async function main(){
   fetch('dane/workbook')
       .then(response => response.arrayBuffer())
       .then(data => {
-        console.log("1")
 
         // workbook = XLSX.read(data, { type: 'array' }); ////zajmuje długo
         // XLSX.writeFile(workbook, "workbook");//
 
         workbook = XLSX.readFile(data, { type: 'buffer' }) //poprawione
 
-
-
-
-
-        console.log("2")
-        
-
-
+        document.querySelector(".loader").classList.add("loader-hiden");
         const sheetName = 'Ratings by Player';
         const sheet = workbook.Sheets[sheetName];
 
         
         const range = 'A3:A144';
-        console.log("3")
         const dataFromRange = XLSX.utils.sheet_to_json(sheet, { header: 1, range });
-        console.log("4")
         const nameList = document.getElementById('nameList');
         async function create_li(){
           for (const row of dataFromRange) {

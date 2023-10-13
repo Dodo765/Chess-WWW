@@ -22,7 +22,35 @@
 .hidden {
   display: none;
 }
-
+.loader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark_brown);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.loading-icon{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-icon img{
+  width: 5%;
+  animation: loading-icon 3s infinite linear;
+}
+@keyframes loading-icon {
+  0% {rotate: 0deg;}
+  100% {rotate: 360deg;}
+}
+.loader-hiden{
+  opacity: 0;
+  pointer-events: none;
+}
 header {
   height: 7.5vh;
   width: 100%;
