@@ -9,10 +9,10 @@ async function main(){
       .then(data => {
         console.log("1")
 
-        //workbook = XLSX.read(data, { type: 'array' }); ////zajmuje długo
-        //XLSX.writeFile(workbook, "workbook");//
+        // workbook = XLSX.read(data, { type: 'array' }); ////zajmuje długo
+        // XLSX.writeFile(workbook, "workbook");//
 
-        workbook = XLSX.readFile(data, { type: 'buffer' })
+        workbook = XLSX.readFile(data, { type: 'buffer' }) //poprawione
 
 
 
